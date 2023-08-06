@@ -1,0 +1,66 @@
+#attemp no 1
+
+        leftsum = A[0]
+        rightsum = A[N-1]
+        leftindex = 0
+        rightindex = N-1
+        equal = False
+        while not equal:
+            if leftsum > rightsum:
+                rightindex -= 1
+                rightsum += A[rightindex]
+            elif rightsum > leftsum:
+                leftindex += 1
+                leftsum += A[leftindex]
+            if leftsum == rightsum and rightindex - leftindex == 2:
+                equal = True
+            if leftindex >= rightindex:
+                return -1
+        
+        return leftindex +2
+            
+attempt no 2
+
+        leftsum = 0
+        rightsum =0
+        if N == 1 or N == 0 :
+            return 1
+        for i in range(1,N-2):
+            leftsum = sum(A[:i])
+            rightsum = sum (A[i+1 :])
+            if leftsum == rightsum :
+                return i + 1
+            if leftsum >rightsum :
+                return -1
+        return 0
+
+attemp no 3
+
+        leftsum = A[0]
+        rightsum =sum(A[2:])
+        if N == 1 or N == 0 :
+            return 1
+        
+        for i in range(1,N-2):
+            if leftsum == rightsum :
+                return i + 1    
+            leftsum += A[i]
+            rightsum -= A[i + 1]
+
+            if leftsum >rightsum :
+                return -1
+        return -1
+        leftsum = A[0]
+        rightsum =sum(A[2:])
+        if N == 1 or N == 0 :
+            return 1
+        
+        for i in range(1,N-2):
+            if leftsum == rightsum :
+                return i + 1    
+            leftsum += A[i]
+            rightsum -= A[i + 1]
+
+            if leftsum >rightsum :
+                return -1
+        return -1
