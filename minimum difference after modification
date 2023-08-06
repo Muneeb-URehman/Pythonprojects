@@ -1,0 +1,17 @@
+attempt no 1
+        smallest = 1000
+        biggest = 0
+        for i in range(n):
+            
+            if arr[i]<=k:
+                arr[i] = arr[i] + k
+                print (arr[i])
+            else:
+                arr[i] =arr[i] - k
+                print (arr[i])
+            
+        biggest = max(arr)
+        smallest = min(arr)
+        
+        return biggest - smallest
+attempt no 2
