@@ -1,0 +1,12 @@
+Largest subarray with 0 sum
+        largestlen = 0
+        for i in range(n):
+            counter = 0
+            sum = 0
+            for x in range(i, n):
+                counter +=1
+                sum += arr[x]
+                
+                if sum == 0 :
+                    largestlen = max(largestlen,counter)
+        return largestlen
